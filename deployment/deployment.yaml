@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ac-1-deployment
+spec:
+  replicas: 2
+  # strategy:
+  #   type: RollingUpdate
+  #   rollingUpdate:
+  #     maxUnavailable: 1
+  #     maxSurge: 1
+  selector:
+    matchLabels:
+      app: ac-lab-1
+  template:
+    metadata:
+      labels:
+        app: ac-lab-1
+    spec:
+      containers:
+      - name: ac-lab-1
+        image: valeriafi191/cloud_app:latest
+        ports:
+        - containerPort: 8080
