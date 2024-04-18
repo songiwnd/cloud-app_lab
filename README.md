@@ -5,14 +5,15 @@
 1. This project should be made to run as a Docker image. -done
 2. Docker image should be published to a Docker registry. -done
    https://hub.docker.com/repository/docker/valeriafi191/cloud_app/general
-4. Docker image should be deployed to a Kubernetes cluster. -done
-5. Kubernetes cluster should be running on a cloud provider. -done
-6. Kubernetes cluster should be accessible from the internet.
-7. Kubernetes cluster should be able to scale the application.
-8. Kubernetes cluster should be able to update the application without downtime.
-9. Kubernetes cluster should be able to rollback the application to a previous version.
-10. Kubernetes cluster should be able to monitor the application.
-11. Kubernetes cluster should be able to autoscale the application based on the load.
+3. Docker image should be deployed to a Kubernetes cluster. -done
+4. Kubernetes cluster should be running on a cloud provider. -done
+5. Kubernetes cluster should be accessible from the internet. -done
+   108.142.12.239:5050
+6. Kubernetes cluster should be able to scale the application.
+7. Kubernetes cluster should be able to update the application without downtime.
+8. Kubernetes cluster should be able to rollback the application to a previous version.
+9. Kubernetes cluster should be able to monitor the application.
+10. Kubernetes cluster should be able to autoscale the application based on the load.
 
 ### Reference Documentation
 
