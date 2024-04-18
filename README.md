@@ -2,11 +2,11 @@
 
 ### Requirements
 
-1. This project should be made to run as a Docker image.
-2. Docker image should be published to a Docker registry.
+1. This project should be made to run as a Docker image. -done
+2. Docker image should be published to a Docker registry. -done
    https://hub.docker.com/repository/docker/valeriafi191/cloud_app/general
-4. Docker image should be deployed to a Kubernetes cluster.
-5. Kubernetes cluster should be running on a cloud provider.
+4. Docker image should be deployed to a Kubernetes cluster. -done
+5. Kubernetes cluster should be running on a cloud provider. -done
 6. Kubernetes cluster should be accessible from the internet.
 7. Kubernetes cluster should be able to scale the application.
 8. Kubernetes cluster should be able to update the application without downtime.
