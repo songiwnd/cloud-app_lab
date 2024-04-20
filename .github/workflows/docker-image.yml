@@ -37,9 +37,7 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_TOKEN }}
-        tags: |
-          main-${{ github.sha }}
-          dev-${{ github.sha }}
-        #tags -vers
-        #utilizez kubernetes
+        tags: main-${{ github.sha }} dev-${{ github.sha }}
+
+      
   
