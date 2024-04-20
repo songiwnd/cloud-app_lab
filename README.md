@@ -10,7 +10,7 @@
 5. Kubernetes cluster should be accessible from the internet. -done
    108.142.12.239:5050
 6. Kubernetes cluster should be able to scale the application. -done
-7. Kubernetes cluster should be able to update the application without downtime.
+7. Kubernetes cluster should be able to update the application without downtime. -done
 8. Kubernetes cluster should be able to rollback the application to a previous version.
 9. Kubernetes cluster should be able to monitor the application.
 10. Kubernetes cluster should be able to autoscale the application based on the load.
