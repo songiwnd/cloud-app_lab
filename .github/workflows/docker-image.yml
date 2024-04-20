@@ -37,7 +37,8 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_TOKEN }}
-        tags: main-${{ github.sha }} dev-${{ github.sha }}
-
+  # Adăugarea tagului pentru versiune după construirea imaginii
+    - name: Tagging Docker Image
+      run: docker tag valeriafi191/cloud_app docker.io/valeriafi191/cloud_app:main-${{ github.sha }}
       
   
