@@ -35,7 +35,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
         image: valeriafi191/cloud_app
-        tags: v2, latest
+        tags: lts-${{ github.sha }}:8, latest
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_TOKEN }}
