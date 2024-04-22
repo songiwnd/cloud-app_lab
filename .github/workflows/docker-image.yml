@@ -21,7 +21,7 @@ jobs:
           java-version: "17"
           distribution: "temurin"
       - name: Get Git Short Commit
-        run: echo "myGitCommit"=$("${{ github.sha }}".SubString(0, 8))"
+        run: echo "myGitCommit"=$("${{ github.sha }}".SubString(0, 8))
 
       # Configure Gradle for optimal use in GiHub Actions, including caching of downloaded dependencies.
       # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
