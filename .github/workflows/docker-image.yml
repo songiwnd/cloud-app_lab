@@ -37,3 +37,11 @@ jobs:
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
+  
+      - name: Setup kubectl
+        uses: azure/k8s-set-context@v1
+        with:
+          kubeconfig: ${{ secrets.KUBE_CONFIG }}
+      - name: Apply kubectl
+        run: | 
+          kubectl apply -f deployment/deployment.yaml
