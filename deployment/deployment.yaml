@@ -14,7 +14,7 @@ spec:
     spec:  
       containers:
       - name: ac-lab-1
-        image: valeriafi191/cloud_app:latest
+        image: valeriafi191/cloud_app
         ports:
         - containerPort: 8080
   strategy:

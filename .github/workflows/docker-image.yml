@@ -1,10 +1,15 @@
-name: Docker Image CI
+name: Build and deploy to AKS 
 
 on:
   push:
     branches: ["main"]
   pull_request:
     branches: ["main"]
+
+env:
+  CLUSTER_NAME: labs-ask
+  CLUSTER_RESOURCE_GROUP: azurelabs
+  NAMESPACE: default
 
 jobs:
   build:
@@ -20,7 +25,6 @@ jobs:
         with:
           java-version: "17"
           distribution: "temurin"
-
       # Configure Gradle for optimal use in GiHub Actions, including caching of downloaded dependencies.
       # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
       - name: Setup Gradle
@@ -37,11 +41,19 @@ jobs:
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
-  
-      - name: Setup kubectl
-        uses: azure/k8s-set-context@v1
+
+          # Set the target Azure Kubernetes Service (AKS) cluster. 
+      - uses: azure/aks-set-context@v1
         with:
-          kubeconfig: ${{ secrets.KUBE_CONFIG }}
-      - name: Apply kubectl
-        run: | 
-          kubectl apply -f deployment/deployment.yaml
+          creds: '${{ secrets.AZURE_CREDENTIALS }}'
+          cluster-name: ${{ env.CLUSTER_NAME }}
+          resource-group: ${{ env.CLUSTER_RESOURCE_GROUP }}
+
+        # Deploy app to AKS
+      - uses: azure/k8s-deploy@v4
+        with:
+          manifests: |
+            deployment/deployment.yml
+          images: |
+            valeriafi191/cloud_app:latest
+          namespace: ${{ env.NAMESPACE }}
