@@ -34,7 +34,7 @@ java -jar ./build/libs/tech-challenge-0.0.1-SNAPSHOT.jar
 7. Kubernetes cluster should be able to update the application without downtime. -done
 8. Kubernetes cluster should be able to rollback the application to a previous version.
 9. Kubernetes cluster should be able to monitor the application.
-10. Kubernetes cluster should be able to autoscale the application based on the load.
+10. Kubernetes cluster should be able to autoscale the application based on the load.-done
 
 ### Additional
 1. Application logs should be stored in a centralised logging system (Loki, Kibana, etc.)
