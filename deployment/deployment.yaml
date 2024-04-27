@@ -17,6 +17,9 @@ spec:
         image: valeriafi191/cloud_app
         ports:
         - containerPort: 8080
+        resources:
+          requests:
+            cpu: "100m"
   strategy:
     type: RollingUpdate
     rollingUpdate:
