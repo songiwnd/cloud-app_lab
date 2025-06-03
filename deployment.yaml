@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: tech-challenge
-        image: songwind/tech-challenge-app:88c2be4
+        image: songwind1/tech-challenge-app:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -27,13 +27,7 @@ spec:
           requests:
             cpu: "100m"
           limits:
-            cpu: "200m"
-        readinessProbe:
-          httpGet:
-            path: /actuator/health
-            port: 8080
-          initialDelaySeconds: 10
-          periodSeconds: 5
+            cpu: "500m"
 ---
 apiVersion: v1
 kind: Service
@@ -44,10 +38,10 @@ spec:
   selector:
     app: tech-challenge
   ports:
-    - protocol: TCP
-      port: 8080
-      targetPort: 8080
-      nodePort: 30080
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+    nodePort: 30080
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
@@ -61,3 +55,5 @@ spec:
   minReplicas: 1
   maxReplicas: 5
   targetCPUUtilizationPercentage: 50
+
+
